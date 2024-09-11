@@ -1,0 +1,28 @@
+﻿@model Character
+@{
+    ViewData["Title"] = "Home Page";
+}
+<script>
+// variable = skill points
+//event listener for every input
+    // when the inputs change, add/substract from the skill points
+    //
+</script>
+<h1>@Model.Level</h1>
+<p>The Result is: YOU @ViewBag.Win</p>
+    <form asp-action="Index" method="post">
+    <br>HP: <input asp-for="HP" />
+    <br>Attack: <input asp-for="Attack" />
+    <br>Defense: <input asp-for="Defense" />
+    <br>Magic: <input asp-for="Magic" />
+    <br>Skill Points: <input asp-for="Skillpoints" value="@Model.Skillpoints"  />
+    <br>Level: <input asp-for="Level" value="@Model.Level" />
+    <br>Name: <input asp-for="Name" />
+    @if (ViewBag.Win == true) 
+    {
+        <button type="submit">FIGHT</button>
+    } else
+    {
+    <a asp-action="Index">Restart?</a>    
+    }
+</form>
